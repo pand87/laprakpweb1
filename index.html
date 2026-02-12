@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Pandu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+    <h2>Welcome Back Mahasiswa 👋</h2>
+    <p>Login untuk melihat biodata</p>
+
+    <form onsubmit="return login()">
+        <input type="text" id="username" placeholder="Username (min 8 karakter)" required>
+        <input type="password" id="password" placeholder="Password (min 6 karakter)" required>
+        <button type="submit">Login</button>
+        <p id="error" class="error"></p>
+    </form>
+</div>
+
+<script>
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var error = document.getElementById("error");
+
+    
+    if(user.length < 4){
+        error.innerHTML = "Username minimal 8 karakter!";
+        return false;
+    }
+
+    if(pass.length < 6){
+        error.innerHTML = "Password minimal 6 karakter!";
+        return false;
+    }
+
+   
+    if(user === "G1A024097" && pass === "Pandu123"){
+        sessionStorage.setItem("login", "true");
+        window.location.href = "biodata.html";
+        return false;
+    } else {
+        error.innerHTML = "Username atau Password salah!";
+        return false;
+    }
+}
+</script>
+
+</body>
+</html>

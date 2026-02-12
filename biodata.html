@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Biodata Pandu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card biodata">
+    <h2>Biodata Anda</h2>
+
+    <img src="foto.jpeg" class="profile">
+
+    <div class="info">
+        <p><strong>Nama Lengkap:</strong> Pandu Pratama Putra</p>
+        <p><strong>Nama Panggilan:</strong> Pand pake U</p>
+        <p><strong>NPM:</strong> G1A024097</p>
+        <p><strong>Jurusan:</strong> Teknik Informatika</p>
+        <p><strong>Universitas:</strong> Universitas Bengkulu</p>
+        <p><strong>Minat:</strong> Jaringan Komputer</p>
+    </div>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+
+if(sessionStorage.getItem("login") !== "true"){
+    window.location.href = "login.html";
+}
+
+function logout(){
+    sessionStorage.removeItem("login");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
